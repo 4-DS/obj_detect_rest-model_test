@@ -1,6 +1,6 @@
 ![interface model_pack_interface.drawio](./imgs/model_pack_interface.drawio.png)
 
-# Step CV-Pipeline: model_train [EN](README.md)
+# Step CV-Pipeline: model_test [EN](README.md)
 
 Данная компонент CV-Pipeline предназначен для конвертирования модели в различные форматы (Onnx, OpenVino, TensorRT и др) и упаковка модели в BentoService.      
 При использовании Binary Service - упаковываются только веса и необходимые файлы - конфиги для запуска сервиса.     
@@ -17,7 +17,7 @@
 - **bento_service**     
 bento_service, сервис упакованной модели через BentoML (сохраняется как zip архив)
 
-## Как запустить шаг CV-Pipeline: model_pack
+## Как запустить шаг CV-Pipeline: model_test
 
 ### Создать директорию для проекта (или использовать уже существующую)
 ```
@@ -25,13 +25,13 @@ mkdir yolox_mmdet
 cd yolox_mmdet
 ```  
 
-### склонировать репозиторий model_pack
+### склонировать репозиторий model_test
 ```
 git clone --recurse-submodules https://gitlab.com/yolox_mmdet/model_pack.git {dir_name for model_pack}
 cd model_pack
 ```  
 
-### запустить шаг CV-Pipeline:model_pack
+### запустить шаг CV-Pipeline:model_tes
 ```
 python step.dev.py
 ```  
