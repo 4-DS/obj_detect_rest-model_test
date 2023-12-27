@@ -1,34 +1,15 @@
-![interface model_test_interface.drawio](./imgs/model_test_interface.drawio.png)
+# Step CV-Pipeline: model_test
 
-# Step CV-Pipeline: model_test [RU](README_RU.md)
+At this stage, CV Pipeline Model_Test tests the packaged BentoML service, which contains the model and other necessary artifacts.
+May contain several tests and examples of calling BentoML REST API methods:
+1. Launch test of packaged bentoservice and test image predictor
+     - Launching the BentoML service (obtained from the Model_Pack component) to process images and obtain predictors
+     - Obtaining a test image and the saved result of processing the test image (must be in the bentoservice artifacts) through the REST API methods of the BentoML service
+       The previously saved processing result on the test image is used as a reference value.
+     - Prediction of a test image via the REST API of the BentoML service
+     - Comparison of the test image predictor with the saved test result. May involve comparing values or other characteristics of a predictor with reference values.
 
-**TODO**
-
-Created based on [template](https://github.com/4-DS/step_template).
-In order not to forget about the required cells in each laptop, the easiest way to create new jupyter notebooks is simply by copying [`substep_full.ipynb`](https://github.com/4-DS/step_template/blob/main/substep_full.ipynb) from standard [template](https://github.com/4-DS/step_template).
-
-Input data for step CV-Pipeline: model_test
-**TODO**
-
-## How to run a step CV-Pipeline: model_test
-
-### Create a directory for the project (or use an existing one)
-```
-mkdir yolox_mmdet
-cd yolox_mmdet
-```  
-
-### clone the repository: model_test
-```
-git clone --recurse-submodules https://gitlab.com/yolox_mmdet/model_pack.git {dir name for model_pack}
-cd model_pack
-```  
-
-### run step CV-Pipeline:model_test
-```
-python step.dev.py
-```  
-or
-```
-step.prod.py
-``` 
+2. Load test, when for a specified time there is a sequential call to the REST API predict method on a test image.
+    This test allows you to evaluate the performance of the BentoML model and service when processing a large number of requests.
+    
+    
